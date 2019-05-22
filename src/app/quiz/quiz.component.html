@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<app-user-details></app-user-details>
+<div class="row" *ngIf="service.qns && this.service.qnProgress != 10">
+  <div class="col-md-6">
+    <div class="card m-5" style="width:40rem">           
+      <div class="card-body">
+        <div>
+          <h4 class="text-left">{{service.qnProgress+1}} Question</h4>          
+          <h4 class="text-right">{{service.displayTimeElapsed()}}</h4>
+        </div>  
+          <p class="card-text"><strong>{{service.qns[service.qnProgress].Qn}}</strong></p>
+      </div>  
+        <ul class="list-group">
+            <ng-container *ngFor="let option of service.qns[service.qnProgress].Options;let i = index">
+              <li class="list-group-item list-group-item-action" *ngIf="option != null" (click)="Answer(service.qns[service.qnProgress].QnID,i)">
+                {{option}}
+              </li>
+            </ng-container>
+        </ul>
+        <div class="btn-group btn-group-lg" role="group" aria-label="Basic example">
+            <button (click)="back()" class="btn btn-dark">BACK</button>
+            <button (click)="next()" class="btn btn-dark">NEXT</button>
+        </div>
+      </div>
+    </div>
+</div>

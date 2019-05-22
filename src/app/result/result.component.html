@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+
+<div class="row">
+    <div class="col-md-8 offset-3">
+        <div class="card m-5" style="width:40rem">           
+            <h3 class="text-center">Quiz Overview <strong>Score: {{service.correctAnswerCount}}/10</strong></h3>
+            <ng-container *ngFor="let qn of service.qns;let i=index">
+                    <div class="card-body">
+                        <p class="card-text"><strong>{{i+1}} {{qn.Qn}}</strong></p>
+                    </div>
+            <ul class="list-group">
+                <ng-container *ngFor="let option of qn.Options;let j = index">
+                    <li *ngIf="option != null" class="list-group-item list-group-item-action">
+                        {{option}}
+                        <span class="badge" *ngIf="qn.correct==j">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span class="fas fa-times" *ngIf="qn.answer==j && qn.correct!=j"></span>
+                    </li>
+                </ng-container>
+            </ul>
+        </ng-container>
+        </div>
+        <button (click)="OnSubmit()">Submit</button>
+
+    </div>
+</div>

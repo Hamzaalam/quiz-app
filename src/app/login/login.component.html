@@ -1,0 +1,11 @@
+<div class="login-page">
+  <h2 class="text-center">Questionnaire App</h2>
+  <div class="form">
+    <form #form='ngForm' class="login-form" (submit)="onSubmit(form)">
+      <input type="text" #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" placeholder="username"/>
+      <input type="password" #Password="ngModel" name="UserName" [(ngModel)]="formModel.Password" placeholder="password"/>
+      <button type="submit">login</button>
+      <p class="message">Not registered? <a routerLink='/registration' routerLinkActive='active'>Create an account</a></p>
+    </form>
+  </div>
+</div>

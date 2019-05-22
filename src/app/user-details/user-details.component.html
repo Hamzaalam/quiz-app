@@ -1,0 +1,10 @@
+<div class="card m-5" style="width:18rem; float: left;" *ngIf="userDetails">
+  <ul class="list-group">
+    <li class="list-group-item"><strong>USER PROFILE </strong></li>
+    <li class="list-group-item"><strong>Username : </strong>{{userDetails.UserName}}</li>
+    <li class="list-group-item"><strong>FirstName : </strong>{{userDetails.FirstName}}</li>
+    <li class="list-group-item"><strong>LastName : </strong>{{userDetails.LastName}}</li>
+    <li class="list-group-item"><strong>Email : </strong>{{userDetails.Email}}</li>
+    <li class="list-group-item"><strong>access time : </strong>{{userDetails.LoggedOn}}</li>
+  </ul>
+</div>
